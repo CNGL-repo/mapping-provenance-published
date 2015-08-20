@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.purl.org/net/adapt-centre/mapping-provenance#"
+     xml:base="http://www.purl.org/net/adapt-centre/mapping-provenance"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance">
+        <dc:rights xml:lang="en">The Mapping Provenance ontology is available under the CC 4.0 BY License; see http://creativecommons.org/licenses/by/4.0/. This license lets others distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation. Proper Attribution: Simply include the statement &quot;This work is based on the Mapping Provenance ontology, developed by KDEG in Trinity College Dublin&quot; and link back to the ontology&apos;s URL.</dc:rights>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#considered -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#considered">
+        <rdfs:domain rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Characterize"/>
+        <rdfs:range rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Ontology"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;used"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#withMatcher -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#withMatcher">
+        <rdfs:range rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Matcher"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#MatcherConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#withResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#withResource">
+        <rdfs:label>with resource</rdfs:label>
+        <prov:definition>Property to relate resources used by a matcher with matcher configurations.</prov:definition>
+        <rdfs:domain rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#MatcherConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#withSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#withSource">
+        <rdfs:range rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Ontology"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Selection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#withStakeholder -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#withStakeholder">
+        <rdfs:domain rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Community"/>
+        <rdfs:range rdf:resource="&prov;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#withTarget -->
+
+    <owl:ObjectProperty rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#withTarget">
+        <rdfs:range rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Ontology"/>
+        <rdfs:domain rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#Selection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#withParameter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#withParameter">
+        <rdfs:label>with parameter</rdfs:label>
+        <prov:definition>Property to relate parameters for a matcher in a matcher configuration.</prov:definition>
+        <rdfs:domain rdf:resource="http://www.purl.org/net/adapt-centre/mapping-provenance#MatcherConfiguration"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Alignment -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Alignment">
+        <rdfs:label>Alignment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>Alignment is a set of correspondences between two ontologies.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#AlignmentPlan -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#AlignmentPlan">
+        <rdfs:label>Alignment Plan</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>An alignment plan summarized the actions to be undertaken to create an ontology alignment from a set of candidate correspondences.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#AlignmentRepository -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#AlignmentRepository">
+        <rdfs:label>Alignment Repository</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>An Alignment Repository represents a repository of ontology alignments.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#AlignmentSearchEngine -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#AlignmentSearchEngine">
+        <rdfs:subClassOf rdf:resource="&prov;SoftwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#CandidateCorrespondences -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#CandidateCorrespondences">
+        <rdfs:label>Candidate Correspondences</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>A representation of the set of relations holding, or supposed to hold according to a (combination of) particular matching algorithm(s), between entities of different ontologies.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Characterize -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Characterize">
+        <rdfs:label>Characterize</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>Characterize is the activity concerned with the discovery of suitable data sources, if not known beforehand, and the assessment the data sources their amenability for being mapped. As stated by Thomas (2014), the goal of the latter is to identify difficulties that may be involved in undertaking the mapping, e.g., based on the form and quality of the ontology.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Community -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Community">
+        <rdfs:label>Community</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>The community is the group of human agents who will contribute to the development of the ontology alignment and mapping.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Create -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Create">
+        <rdfs:label>Create</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>The process of creating an alignment based on the candidate correspondences that were deemed to be an adequate starting point. Using the alignment plan created in the Prepare activity, the community of stakeholders select, refine and create -- where necessary -- the correspondences that will constitute the alignment.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#DiscoveryReport -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#DiscoveryReport">
+        <rdfs:label>Discovery Report</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>The Discovery Report is a summary of the process that took place for looking for suitable ontologies during the Characterize activity.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Evaluate -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Evaluate">
+        <rdfs:label>Evaluate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>Evaluate is the process of reflecting on and evaluating the candidate correspondences that have been generated in a execute activity and to decide whether the community will proceed with the creation of an alignment or going back to planning a new execution activity.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Execute -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Execute">
+        <rdfs:label>Execute</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>The process of finding relationships or correspondences between entitites of different ontologies (Euzenat and Shvaiko, 2007).</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Mapping -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Mapping">
+        <rdfs:label>Mapping</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>Mapping is the oriented, or directed, version of an alignment: it maps the entities of one ontology to at most one entity of another ontology (Euzenat and Shvaiko, 2007).</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#MappingDecision -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#MappingDecision">
+        <rdfs:label>Mapping Decision</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>A Mapping Decision captures the decision by the stakeholder community taken based on the ontologies considered and may be used to inform the subsequent activity, if one were to take place.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#MappingEvaluation -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#MappingEvaluation">
+        <rdfs:label>Mapping Evaluation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Matcher -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Matcher">
+        <rdfs:label>Matcher</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;SoftwareAgent"/>
+        <prov:definition>An ontology matcher.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#MatcherConfiguration -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#MatcherConfiguration">
+        <rdfs:label>Matcher Configuration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>The configuration of an ontology matcher. Instances of this class will be related to the parameters and an instance of the Matcher class.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#MatchingEvaluation -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#MatchingEvaluation">
+        <rdfs:label>Matching Evaluation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>Summary of the evaluation of the generated candidate correspondences.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#MatchingEvaluationDecision -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#MatchingEvaluationDecision">
+        <rdfs:label>Matching Evaluation Decision</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>Representation of the the decision taken after evaluating the generated candidate correspondences.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Ontology -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Ontology">
+        <rdfs:label>Ontology</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>An ontology is a formal specification of the types, properties, and interrelationships of the entities that exist for a particular domain of discourse.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#OntologyAnalysis -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#OntologyAnalysis">
+        <rdfs:label>Ontology Analysis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>The Ontology Analysis contains a summary of the evaluation and assessment of the considered ontologies.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Plan -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Plan">
+        <rdfs:label>Plan</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>Plan is the activity of planning the execution. In this activity, the configuration of the matchers are discussed taking into account the requirements and the Ontology Analysis.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Prepare -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Prepare">
+        <rdfs:label>Prepare</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>Prepare is the activity concerned with planning the creation of an alignment and the generation (or “rendering”) of a mapping.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Project -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Project">
+        <rdfs:label>Project</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Plan"/>
+        <prov:definition>A project is a collaborative undertaking to create a mapping between two ontologies or knowledge bases.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Render -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Render">
+        <rdfs:label>Render</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>Render is the activity of creating a mapping from an ontology alignment.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Requirement -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Requirement">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>A ontology mapping requirement is a documented representation of a condition that must be met or possessed by the alignment or rendered mapping to solve a problem or achieve an objective. This definition is based on the IEEE Glossary of Software Engineering Technology&apos;s definition of &quot;software requirement&quot;.</prov:definition>
+        <prov:definition>Requirement</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Resource -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Resource">
+        <rdfs:label>Resource</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>A Resource is an Entity used by a Matcher in a Matcher Configuration.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Reuse -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Reuse">
+        <rdfs:label>Reuse</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>Reuse is the activity of discovering reusable alignments based on the requirements, the source ontology and the target ontology. There are three possible outcomes: either no reusable alignment is found, an alignment is found that could serve as the basis for creating a new alignment, or an alignment can be reused in its current form. Depending on the project, however, the alignment to be reused might need to be refined and rendered in a different format.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#ReuseDecision -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#ReuseDecision">
+        <rdfs:label>Reuse Decision</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>A Reuse Decision is the decision taken by the stakeholder community to proceed with the reuse of an existing alignment.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#ReuseEvaluation -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#ReuseEvaluation">
+        <rdfs:label>Reuse Evaluation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>A Reuse Evaluation is used to represent (a summary of) the analysis performed of the reusability of existing alignments.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Scope -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Scope">
+        <rdfs:label>Scope</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>The scope represents the features that will characterize the alignment and rendered mapping.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Selection -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Selection">
+        <rdfs:label>Selection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:definition>The Selection represents the choice of choosing two ontologies (source and target) for which an Alignment has to be discovered or created.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.purl.org/net/adapt-centre/mapping-provenance#Stage -->
+
+    <owl:Class rdf:about="http://www.purl.org/net/adapt-centre/mapping-provenance#Stage">
+        <rdfs:label>Stage</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Activity"/>
+        <prov:definition>Staging is the first activity in an ontology mapping lifecycle where the community of stakeholders decides on both the scope of the project and its requirements. Both the scope and the requirements will be used in subsequent stages and activities to validate (intermediate) results.</prov:definition>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
